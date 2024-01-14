@@ -22,6 +22,7 @@ const Weather = () => {
       setError("City not found. Please try again.");
     }
   };
+  console.log(weatherData);
 
   return (
     <div className="weather-container">
@@ -42,7 +43,7 @@ const Weather = () => {
           <h2>
             {weatherData.name}, {weatherData.sys.country}
           </h2>
-          <p>Temperature: {weatherData.main.temp} °C</p>
+          <p>Temperature: {Math.floor(weatherData.main.temp / 10)} °C</p>
           <p>Weather: {weatherData.weather[0].description}</p>
         </div>
       )}

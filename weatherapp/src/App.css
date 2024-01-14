@@ -1,44 +1,68 @@
 /* Add the following styles to your CSS file or in the <style> tag of your component */
 
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .weather-container {
   text-align: center;
-  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 80%;
   max-width: 400px;
-  background-color: #f7f7f7;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .weather-heading {
-  font-size: 28px;
+  font-size: 36px;
   margin-bottom: 20px;
   color: #333;
 }
 
 .weather-input {
-  padding: 10px;
+  padding: 15px;
   margin-right: 8px;
-  width: 60%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  width: calc(100% - 24px);
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  outline: none;
+}
+
+.weather-input::placeholder {
+  color: #aaa;
 }
 
 .weather-button {
-  padding: 10px 16px;
-  background-color: #007bff;
+  padding: 15px 0;
+  background-color: #4caf50;
   color: #fff;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-size: 18px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.weather-button:hover {
+  background-color: #45a049;
 }
 
 .weather-info {
-  margin-top: 20px;
+  margin-top: 30px;
   color: #333;
 }
 
 .weather-error {
-  color: red;
-  margin-top: 10px;
+  color: #e74c3c;
+  margin-top: 30px;
+  font-size: 18px;
 }
