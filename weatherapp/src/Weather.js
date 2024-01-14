@@ -2,35 +2,6 @@
 
 import React, { useState } from "react";
 import axios from "axios";
-import styled from "styled-components";
-
-const Container = styled.div`
-  text-align: center;
-  margin: 50px auto;
-  max-width: 400px;
-`;
-
-const Input = styled.input`
-  padding: 8px;
-  margin-right: 8px;
-`;
-
-const Button = styled.button`
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-`;
-
-const WeatherInfo = styled.div`
-  margin-top: 20px;
-`;
-
-const Error = styled.p`
-  color: red;
-  margin-top: 10px;
-`;
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -53,28 +24,31 @@ const Weather = () => {
   };
 
   return (
-    <Container>
-      <h1>Weather App</h1>
-      <Input
+    <div className="weather-container">
+      <h1 className="weather-heading">Weather App</h1>
+      <input
         type="text"
         placeholder="Enter city"
         value={city}
         onChange={(e) => setCity(e.target.value)}
+        className="weather-input"
       />
-      <Button onClick={fetchWeatherData}>Get Weather</Button>
+      <button onClick={fetchWeatherData} className="weather-button">
+        Get Weather
+      </button>
 
       {weatherData && (
-        <WeatherInfo>
+        <div className="weather-info">
           <h2>
             {weatherData.name}, {weatherData.sys.country}
           </h2>
           <p>Temperature: {weatherData.main.temp} °C</p>
           <p>Weather: {weatherData.weather[0].description}</p>
-        </WeatherInfo>
+        </div>
       )}
 
-      {error && <Error>{error}</Error>}
-    </Container>
+      {error && <p className="weather-error">{error}</p>}
+    </div>
   );
 };
 
