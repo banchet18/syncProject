@@ -1,11 +1,12 @@
 import "./App.css";
-
-import { useEffect, useState } from "react";
+import Weather from "./Weather";
 
 function App() {
-  const [city, setCity] = useState();
-
-  return <div className="app">sadasd</div>;
+  return (
+    <div className="app">
+      <Weather />
+    </div>
+  );
 }
 
 export default App;
