@@ -13,7 +13,12 @@ const Search = (props) => {
         }}
         ref={searchinput}
       />
-      <button className=" p-3 bg-slate-600 text-white">Search</button>
+      <button
+        onClick={props.searchWeather}
+        className=" p-3 bg-slate-600 text-white"
+      >
+        Search
+      </button>
     </div>
   );
 };
