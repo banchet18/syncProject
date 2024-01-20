@@ -1,6 +1,6 @@
 import Search from "./components/Search";
 import Result from "./components/Result";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const [search, setSearch] = useState("");
@@ -9,6 +9,12 @@ const App = () => {
   const changeSearch = (value) => {
     setSearch(value);
   };
+
+  const getWeatherData = () => {};
+
+  useEffect(() => {
+    getWeatherData();
+  }, [search]);
 
   return (
     <div className=" max-w-[1280px] mx-auto mt-2 p-3 ">
