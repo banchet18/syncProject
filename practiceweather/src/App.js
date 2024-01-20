@@ -18,7 +18,7 @@ const App = () => {
           `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=a3c79758b7d82414f9b304fec4991587`
         )
         .then((response) => {
-          console.log(response);
+          console.log(response.data);
         })
         .catch((error) => {
           console.log(error);
